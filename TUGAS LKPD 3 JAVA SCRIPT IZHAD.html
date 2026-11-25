@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TUGAS LKPD 3 JAVA SCRIPT IZHAD</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#14213d;--mute:#56627a;--line:#dbe3f0;--acc:#2447d8;--acc2:#e8eeff;--ok:#0f7a4b;--okbg:#e3f6ec;--code:#0f172a;--codet:#e6edf7;--js:#f7df1e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--card:#141b30;--ink:#e8edf8;--mute:#9aa7c2;--line:#26304d;--acc:#8ea6ff;--acc2:#1b2547;--ok:#6fe0a8;--okbg:#10301f;--code:#070b17}}
+:root[data-theme="dark"]{--bg:#0b1020;--card:#141b30;--ink:#e8edf8;--mute:#9aa7c2;--line:#26304d;--acc:#8ea6ff;--acc2:#1b2547;--ok:#6fe0a8;--okbg:#10301f;--code:#070b17}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Bricolage Grotesque",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 64px}
+header{padding:36px 0 8px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+h1 span{background:var(--js);color:#14213d;padding:0 .18em;border-radius:6px}
+.sub{color:var(--mute);margin:0 0 22px;max-width:60ch}
+.id{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.id div{background:var(--card);padding:12px 16px}
+.id small{display:block;color:var(--mute);font-size:.8rem}
+.id b{font-size:1.05rem}
+.id input{font:inherit;font-weight:600;color:var(--ink);background:transparent;border:0;border-bottom:1px dashed var(--line);width:100%;padding:0}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:20px}
+h2{font-size:1.35rem;margin:0 0 4px;letter-spacing:-.01em}
+h2 i{font-style:normal;display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:8px;background:var(--acc);color:#fff;font-size:.95rem;margin-right:10px;vertical-align:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2 i{color:#0b1020}}
+h3{font-size:1rem;margin:18px 0 6px}
+p{margin:8px 0}
+.note{color:var(--mute);font-size:.95rem}
+pre{background:var(--code);color:var(--codet);border-radius:12px;padding:14px 16px;overflow-x:auto;font:400 .9rem/1.6 "JetBrains Mono",ui-monospace,monospace;margin:12px 0}
+pre .k{color:#8fb0ff}pre .s{color:#9fe3b0}pre .n{color:#ffb86b}pre .c{color:#7f8db0}
+code{font-family:"JetBrains Mono",ui-monospace,monospace;background:var(--acc2);color:var(--acc);padding:1px 6px;border-radius:5px;font-size:.88em}
+.qa{border-left:3px solid var(--acc);background:var(--acc2);border-radius:0 10px 10px 0;padding:10px 14px;margin:10px 0}
+.qa .q{font-weight:600;font-size:.95rem}
+.qa .a{color:var(--ok);background:var(--okbg);display:inline-block;border-radius:8px;padding:3px 10px;margin-top:4px}
+.qa p.a{display:block}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--acc2)}
+td.ok{color:var(--ok);font-weight:600}
+.run{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:10px 0}
+.run label{font-size:.85rem;color:var(--mute);display:flex;flex-direction:column;gap:2px}
+.run input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);width:130px}
+button{font:600 .95rem inherit;font-family:inherit;background:var(--acc);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button{color:#0b1020}}
+button:focus-visible,input:focus-visible{outline:3px solid var(--js);outline-offset:2px}
+.out{background:var(--code);color:#9fe3b0;border-radius:10px;padding:10px 14px;font:400 .9rem "JetBrains Mono",monospace;min-height:2.6rem;margin-top:8px;white-space:pre-wrap}
+ol.al{padding-left:20px}
+.chk{color:var(--ok);font-weight:800}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+footer{text-align:center;color:var(--mute);font-size:.88rem;margin-top:30px}
+@media print{.run,button{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>TUGAS <span>LKPD 3</span><br>JAVA SCRIPT — IZHAD</h1>
+<p class="sub">Lembar kerja peserta didik yang sudah terisi, lengkap dengan contoh program yang bisa langsung dijalankan di halaman ini.</p>
+<div class="id">
+<div><small>Nama</small><b>Izhad</b></div>
+<div><small>Kelas / No. Absen</small><input aria-label="Kelas dan nomor absen" placeholder="Isi kelas / no. absen"></div>
+<div><small>Tanggal</small><b>13 November 2026</b></div>
+<div><small>Satuan Pendidikan</small><b>SMKN 1 Garut</b></div>
+<div><small>Mata Pelajaran</small><b>Dasar-Dasar Pengembangan Perangkat Lunak dan Gim</b></div>
+<div><small>Kelas / Alokasi Waktu</small><b>X / Fase E · 2 × 45 menit</b></div>
+</div>
+</header>
+
+<section>
+<h2>A. Tujuan pembelajaran</h2>
+<ol>
+<li>Membedakan String dan Number.</li>
+<li>Menjelaskan bahwa <code>prompt()</code> menghasilkan String.</li>
+<li>Menggunakan <code>Number()</code> dan <code>String()</code>.</li>
+<li>Menganalisis kesalahan akibat tipe data.</li>
+<li>Membuat program input dan perhitungan sederhana.</li>
+</ol>
+<h3>B. Petunjuk kerja</h3>
+<p class="note">Kerjakan mandiri dulu, prediksi hasil sebelum menjalankan kode, jalankan dan amati, diskusikan lewat Think Pair Share, lalu simpan file sebagai <code>lkpd_string_number_izhad.js</code>.</p>
+</section>
+
+<section>
+<h2><i>1</i>Eksperimen 10 + 20</h2>
+<pre><span class="k">let</span> a = <span class="s">"10"</span>;
+<span class="k">let</span> b = <span class="s">"20"</span>;
+console.log(a + b);</pre>
+<div class="qa"><div class="q">Apa output program?</div><span class="a">1020</span></div>
+<div class="qa"><div class="q">Mengapa hasil tersebut terjadi?</div><p class="a">Karena a dan b berisi teks (String), tanda + menggabungkan teks, bukan menjumlahkan angka.</p></div>
+<div class="qa"><div class="q">Apakah a dan b bertipe Number?</div><span class="a">Bukan, keduanya bertipe String karena ditulis dalam tanda kutip.</span></div>
+<div class="qa"><div class="q">Uji sekarang. Apakah prediksimu benar?</div><p class="a">Benar. Setelah dijalankan, hasilnya 1020, bukan 30.</p></div>
+<div class="run"><button id="r1">Jalankan kode</button></div>
+<div class="out" id="o1" aria-live="polite">Tekan “Jalankan kode”.</div>
+</section>
+
+<section>
+<h2><i>2</i>Menemukan tipe data</h2>
+<pre><span class="k">let</span> nama = <span class="s">"Asep"</span>;
+<span class="k">let</span> umur = <span class="n">16</span>;
+console.log(<span class="k">typeof</span> nama);
+console.log(<span class="k">typeof</span> umur);</pre>
+<div class="tw"><table>
+<tr><th>Variabel</th><th>Prediksi</th><th>Hasil typeof</th><th>Kesimpulan</th></tr>
+<tr><td>nama</td><td>string</td><td class="ok">string</td><td>Teks dalam tanda kutip adalah String</td></tr>
+<tr><td>umur</td><td>number</td><td class="ok">number</td><td>Angka tanpa kutip adalah Number</td></tr>
+</table></div>
+<div class="qa"><div class="q">Temuan: apa perbedaan String dan Number?</div><p class="a">String adalah data teks yang ditulis dengan tanda kutip dan tidak bisa dihitung secara matematis. Number adalah angka tanpa kutip yang bisa dijumlah, dikurang, dikali, dan dibagi.</p></div>
+<div class="run"><button id="r2">Jalankan kode</button></div>
+<div class="out" id="o2" aria-live="polite">Tekan “Jalankan kode”.</div>
+</section>
+
+<section>
+<h2><i>3</i>Konversi String menjadi Number</h2>
+<pre><span class="k">let</span> a = <span class="s">"10"</span>;
+<span class="k">let</span> b = <span class="s">"20"</span>;
+<span class="k">let</span> hasil = Number(a) + Number(b);
+console.log(hasil);</pre>
+<div class="qa"><div class="q">Isian: let hasil =</div><span class="a">Number(a) + Number(b);</span></div>
+<div class="qa"><div class="q">Hasil program</div><span class="a">30</span></div>
+<div class="run"><button id="r3">Jalankan kode</button></div>
+<div class="out" id="o3" aria-live="polite">Tekan “Jalankan kode”.</div>
+</section>
+
+<section>
+<h2><i>4</i>Program kasir sederhana</h2>
+<pre><span class="k">let</span> harga = Number(prompt(<span class="s">"Masukkan harga: "</span>));
+<span class="k">let</span> jumlah = Number(prompt(<span class="s">"Masukkan jumlah: "</span>));
+<span class="k">let</span> total = harga * jumlah;
+console.log(<span class="s">"Total belanja = "</span> + total);</pre>
+<div class="tw"><table>
+<tr><th>Input uji</th><th>Nilai</th></tr>
+<tr><td>Harga</td><td>Rp 15.000</td></tr>
+<tr><td>Jumlah</td><td>3</td></tr>
+<tr><td>Total seharusnya</td><td class="ok">Rp 45.000</td></tr>
+<tr><td>Total program</td><td class="ok">Rp 45.000</td></tr>
+</table></div>
+<p class="note">Coba sendiri dengan angka lain:</p>
+<div class="run">
+<label>Harga<input id="h" type="number" value="15000" inputmode="numeric"></label>
+<label>Jumlah<input id="j" type="number" value="3" inputmode="numeric"></label>
+<button id="r4">Hitung total</button>
+</div>
+<div class="out" id="o4" aria-live="polite">Total belanja = 45000</div>
+</section>
+
+<section>
+<h2><i>5</i>Tantangan: program hitung nilai</h2>
+<h3>Algoritma saya</h3>
+<ol class="al">
+<li>Minta input nilai tugas, UTS, dan UAS dengan <code>prompt()</code>.</li>
+<li>Ubah ketiga input menjadi Number dengan <code>Number()</code>.</li>
+<li>Hitung rata-rata dengan rumus (tugas + UTS + UAS) / 3.</li>
+<li>Tampilkan hasil rata-rata dengan <code>console.log()</code>.</li>
+</ol>
+<pre><span class="k">let</span> tugas = Number(prompt(<span class="s">"Nilai tugas: "</span>));
+<span class="k">let</span> uts = Number(prompt(<span class="s">"Nilai UTS: "</span>));
+<span class="k">let</span> uas = Number(prompt(<span class="s">"Nilai UAS: "</span>));
+<span class="k">let</span> rata = (tugas + uts + uas) / <span class="n">3</span>;
+console.log(<span class="s">"Rata-rata = "</span> + rata);</pre>
+<div class="run">
+<label>Tugas<input id="nt" type="number" value="80"></label>
+<label>UTS<input id="nu" type="number" value="85"></label>
+<label>UAS<input id="na" type="number" value="90"></label>
+<button id="r5">Hitung rata-rata</button>
+</div>
+<div class="out" id="o5" aria-live="polite">Rata-rata = 85</div>
+</section>
+
+<section>
+<h2>H. Think — Pair — Share</h2>
+<div class="qa"><div class="q">Mengapa prompt() perlu dikonversi jika hasilnya ingin dihitung?</div><p class="a">Karena prompt() selalu menghasilkan String. Tanpa konversi, operator + akan menggabungkan teks, bukan menjumlahkan angka.</p></div>
+<div class="qa"><div class="q">Apa perbedaan "10" dengan 10?</div><p class="a">"10" adalah String (teks), sedangkan 10 adalah Number (angka) yang bisa dihitung.</p></div>
+<div class="qa"><div class="q">Apa yang terjadi jika lupa Number()?</div><p class="a">Hasil perhitungan salah. Contohnya "10" + "20" menjadi "1020", bukan 30.</p></div>
+<div class="qa"><div class="q">Pair: bandingkan jawaban dengan teman</div><p class="a">Intinya sama, hanya susunan kalimat yang berbeda karena setiap orang memakai kata-kata sendiri.</p></div>
+<div class="qa"><div class="q">Share: temuan penting untuk kelas</div><p class="a">Hasil prompt() selalu String, jadi bungkus dengan Number() sebelum menghitung.</p></div>
+</section>
+
+<section>
+<h2>I. Refleksi 3–2–1</h2>
+<div class="grid2">
+<div><h3>3 hal yang saya pahami</h3><ol><li>String dan Number berbeda tipe.</li><li>prompt() menghasilkan String.</li><li>Number() mengubah teks angka menjadi angka.</li></ol></div>
+<div><h3>2 hal yang masih membingungkan</h3><ol><li>Hasil Number() jika input berisi huruf (NaN).</li><li>Kapan memakai String() dalam program nyata.</li></ol></div>
+<div><h3>1 hal yang ingin saya coba</h3><p>Membuat kalkulator sederhana dengan empat operator.</p></div>
+</div>
+</section>
+
+<section>
+<h2>J. Penilaian diri</h2>
+<div class="tw"><table>
+<tr><th>Pernyataan</th><th>Ya</th><th>Belum</th></tr>
+<tr><td>Saya dapat membedakan String dan Number.</td><td class="chk">✔</td><td>☐</td></tr>
+<tr><td>Saya memahami prompt() menghasilkan String.</td><td class="chk">✔</td><td>☐</td></tr>
+<tr><td>Saya dapat menggunakan Number().</td><td class="chk">✔</td><td>☐</td></tr>
+<tr><td>Saya dapat menggunakan String().</td><td class="chk">✔</td><td>☐</td></tr>
+<tr><td>Saya dapat menemukan kesalahan tipe data.</td><td class="chk">✔</td><td>☐</td></tr>
+<tr><td>Saya dapat membuat program input dan hitung sederhana.</td><td class="chk">✔</td><td>☐</td></tr>
+</table></div>
+</section>
+
+<section>
+<h2>K. Rubrik penilaian praktik</h2>
+<div class="tw"><table>
+<tr><th>Aspek</th><th>4 — Sangat baik</th><th>3 — Baik</th><th>2 — Cukup</th><th>1 — Perlu bimbingan</th></tr>
+<tr><td>Tipe data</td><td>Menjelaskan dan memberi contoh</td><td>Membedakan String/Number</td><td>Masih ada kekeliruan</td><td>Belum memahami</td></tr>
+<tr><td>Konversi</td><td>Tepat dan mandiri</td><td>Benar dengan sedikit arahan</td><td>Beberapa kesalahan</td><td>Belum mampu</td></tr>
+<tr><td>Program</td><td>Berjalan benar dan rapi</td><td>Sedikit kesalahan</td><td>Berjalan sebagian</td><td>Belum berjalan</td></tr>
+<tr><td>Pemecahan masalah</td><td>Menemukan dan memperbaiki error</td><td>Mampu dengan sedikit bantuan</td><td>Perlu banyak bantuan</td><td>Belum mampu</td></tr>
+</table></div>
+<p class="note">Catatan guru: ______________________________________________</p>
+</section>
+<footer>TUGAS LKPD 3 JAVA SCRIPT · IZHAD · SMKN 1 GARUT</footer>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+$("r1").onclick=function(){var a="10",b="20";$("o1").textContent=a+b};
+$("r2").onclick=function(){var nama="Asep",umur=16;$("o2").textContent=typeof nama+"\n"+typeof umur};
+$("r3").onclick=function(){var a="10",b="20";$("o3").textContent=String(Number(a)+Number(b))};
+$("r4").onclick=function(){var t=Number($("h").value)*Number($("j").value);$("o4").textContent="Total belanja = "+t};
+$("r5").onclick=function(){var r=(Number($("nt").value)+Number($("nu").value)+Number($("na").value))/3;$("o5").textContent="Rata-rata = "+r};
+})();
+</script>
+</body>
+</html>
